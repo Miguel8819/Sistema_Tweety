@@ -2,6 +2,8 @@ from itertools import product
 import sys
 import os
 
+from Models.venta import venta
+
 myDir = os.getcwd()
 sys.path.append(myDir)
 
@@ -24,23 +26,40 @@ class ventaController():
         self.venta.ui.setupUi(self.venta.Form)
         self.venta.Form.show()
 
+  
 
     
-    def aceptar(self, Ui_venta): 
-      
+    def aceptar(self, Ui_venta, cod): 
+     
         table = self.venta.table_venta        
-        product = self.product.getProduct(2)
+       
+        product = self.product.getProduct(cod)
         
-        
+        if table.rowCount()==20: 
+            rowCount=0
+            table.setRowCount(1)
+        else:
+            rowCount=table.rowCount()
+            table.setRowCount(table.rowCount() + 1 )
            
-        table.setItem(0,0, QtWidgets.QTableWidgetItem(product[0])) #cod
-        table.setItem(0,1, QtWidgets.QTableWidgetItem('0'))
-        table.setItem(0,2, QtWidgets.QTableWidgetItem(product[1])) #name
-        table.setItem(0,3, QtWidgets.QTableWidgetItem(product[3])) #price
-        table.setItem(0,4, QtWidgets.QTableWidgetItem('0'))
-        table.setItem(0,5, QtWidgets.QTableWidgetItem('0'))
-        table.setItem(0,6, QtWidgets.QTableWidgetItem(product[2])) #stock
+            
+        print(table.rowCount())
+        print(rowCount)    
 
+        table.setItem(rowCount,0, QtWidgets.QTableWidgetItem(product[0])) #cod
+        table.setItem(rowCount,1, QtWidgets.QTableWidgetItem('1')) #cant
+        table.setItem(rowCount,2, QtWidgets.QTableWidgetItem(product[1])) #name
+        table.setItem(rowCount,3, QtWidgets.QTableWidgetItem(product[3])) #price
+        table.setItem(rowCount,4, QtWidgets.QTableWidgetItem('0')) #descuento
+        table.setItem(rowCount,5, QtWidgets.QTableWidgetItem('0')) #total
+        table.setItem(rowCount,6, QtWidgets.QTableWidgetItem(product[2])) #stock
+
+        self.venta.input_codprod.clear()
+
+       
+
+        
+       
 
         
     

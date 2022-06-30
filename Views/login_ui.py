@@ -18,7 +18,7 @@ from Controllers.LoginController import LoginController
 class Ui_LogIn(object):
     def __init__(self):
         self.login_controller = LoginController(self)
-
+        print("hola")
     def setupUi(self, LogIn):
         LogIn.setObjectName("LogIn")
         LogIn.resize(800, 600)

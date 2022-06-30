@@ -40,7 +40,7 @@ background-color:rgb(187, 235, 255);
     <string>Cod Cliente</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_descuento">
+  <widget class="QLineEdit" name="input_descuento">
    <property name="geometry">
     <rect>
      <x>850</x>
@@ -268,7 +268,7 @@ background-color:rgb(187, 235, 255);
     </property>
    </item>
   </widget>
-  <widget class="QTimeEdit" name="edit_hora">
+  <widget class="QTimeEdit" name="input_hora">
    <property name="geometry">
     <rect>
      <x>860</x>
@@ -297,7 +297,7 @@ background-color:rgb(187, 235, 255);
     <string>Neto</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_direccion">
+  <widget class="QLineEdit" name="input_direccion">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -771,7 +771,7 @@ background-color:rgb(187, 235, 255);
      <normaloff>../Imagenes/png-transparent-green-grass-symbol-logo-dialog-box-accept-yellow-circle.png</normaloff>../Imagenes/png-transparent-green-grass-symbol-logo-dialog-box-accept-yellow-circle.png</iconset>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_neto">
+  <widget class="QLineEdit" name="input_neto">
    <property name="geometry">
     <rect>
      <x>850</x>
@@ -982,7 +982,7 @@ background-color:rgb(187, 235, 255);
     </size>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_codcliente">
+  <widget class="QLineEdit" name="input_codcliente">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -1011,7 +1011,7 @@ background-color:rgb(187, 235, 255);
     <string>CODIGO DE PRODUCTO</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_ordencompra">
+  <widget class="QLineEdit" name="input_ordencompra">
    <property name="geometry">
     <rect>
      <x>650</x>
@@ -1040,7 +1040,7 @@ background-color:rgb(187, 235, 255);
     <string>Nro Orden Compra</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_condIVA">
+  <widget class="QLineEdit" name="input_condIVA">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -1050,7 +1050,7 @@ background-color:rgb(187, 235, 255);
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_codprod">
+  <widget class="QLineEdit" name="input_codprod">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -1098,7 +1098,7 @@ background-color:rgb(187, 235, 255);
     <string>Localidad</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_nombre">
+  <widget class="QLineEdit" name="input_nombre">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -1108,7 +1108,7 @@ background-color:rgb(187, 235, 255);
     </rect>
    </property>
   </widget>
-  <widget class="QDateEdit" name="edit_fecha">
+  <widget class="QDateEdit" name="input_fecha">
    <property name="geometry">
     <rect>
      <x>860</x>
@@ -1118,7 +1118,7 @@ background-color:rgb(187, 235, 255);
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_condpago">
+  <widget class="QLineEdit" name="input_condpago">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -1186,7 +1186,7 @@ background-color:rgb(187, 235, 255);
     <string>FACTURA C</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="edit_localidad">
+  <widget class="QLineEdit" name="input_localidad">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -1248,7 +1248,7 @@ background-color:rgb(187, 235, 255);
     <string>Efectivo</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_efectivo">
+  <widget class="QLineEdit" name="input_efectivo">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -1278,7 +1278,7 @@ background-color:rgb(187, 235, 255);
     <string>Cambio</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_cambio">
+  <widget class="QLineEdit" name="input_cambio">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -1308,7 +1308,7 @@ background-color:rgb(187, 235, 255);
     <string>Total</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_total">
+  <widget class="QLineEdit" name="input_total">
    <property name="geometry">
     <rect>
      <x>620</x>
@@ -1441,43 +1441,13 @@ background-color:rgb(187, 235, 255);
     <string>Importe</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_importe">
+  <widget class="QLineEdit" name="input_importe">
    <property name="geometry">
     <rect>
      <x>850</x>
      <y>340</y>
      <width>113</width>
      <height>16</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>190</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CANTIDAD</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>190</y>
-     <width>113</width>
-     <height>20</height>
     </rect>
    </property>
   </widget>
@@ -1499,48 +1469,46 @@ background-color:rgb(187, 235, 255);
   </widget>
   <zorder>label_3</zorder>
   <zorder>codcliente</zorder>
-  <zorder>lineEdit_descuento</zorder>
+  <zorder>input_descuento</zorder>
   <zorder>descuento</zorder>
   <zorder>fecha</zorder>
   <zorder>condpago</zorder>
   <zorder>table_venta</zorder>
-  <zorder>edit_hora</zorder>
+  <zorder>input_hora</zorder>
   <zorder>neto</zorder>
-  <zorder>edit_direccion</zorder>
+  <zorder>input_direccion</zorder>
   <zorder>Botonbuscar</zorder>
   <zorder>Boton_finalizar</zorder>
-  <zorder>lineEdit_neto</zorder>
+  <zorder>input_neto</zorder>
   <zorder>Boton_cancelar</zorder>
-  <zorder>edit_codcliente</zorder>
+  <zorder>input_codcliente</zorder>
   <zorder>codprod</zorder>
-  <zorder>edit_ordencompra</zorder>
+  <zorder>input_ordencompra</zorder>
   <zorder>NroOrden</zorder>
-  <zorder>edit_condIVA</zorder>
-  <zorder>lineEdit_codprod</zorder>
+  <zorder>input_condIVA</zorder>
+  <zorder>input_codprod</zorder>
   <zorder>direccion</zorder>
   <zorder>localidad</zorder>
-  <zorder>edit_nombre</zorder>
-  <zorder>edit_fecha</zorder>
-  <zorder>edit_condpago</zorder>
+  <zorder>input_nombre</zorder>
+  <zorder>input_fecha</zorder>
+  <zorder>input_condpago</zorder>
   <zorder>nombre</zorder>
   <zorder>condIVA</zorder>
   <zorder>label</zorder>
-  <zorder>edit_localidad</zorder>
+  <zorder>input_localidad</zorder>
   <zorder>hora</zorder>
   <zorder>boton_aceptar</zorder>
   <zorder>efectivo</zorder>
-  <zorder>lineEdit_efectivo</zorder>
+  <zorder>input_efectivo</zorder>
   <zorder>cambio</zorder>
-  <zorder>lineEdit_cambio</zorder>
+  <zorder>input_cambio</zorder>
   <zorder>total</zorder>
-  <zorder>lineEdit_total</zorder>
+  <zorder>input_total</zorder>
   <zorder>boton_efectivo</zorder>
   <zorder>Boton_ticket</zorder>
   <zorder>Boton_limpiar</zorder>
   <zorder>importe</zorder>
-  <zorder>lineEdit_importe</zorder>
-  <zorder>label_2</zorder>
-  <zorder>lineEdit</zorder>
+  <zorder>input_importe</zorder>
  </widget>
  <resources/>
  <connections/>
