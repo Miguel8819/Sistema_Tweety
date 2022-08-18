@@ -20,19 +20,25 @@ class menuprincipalController():
      self.menuprincipal.ui = Ui_controlstock()
      self.menuprincipal.ui.setupUi(self.menuprincipal.Form)
      self.menuprincipal.Form.show()
-     Form.hide()
+     Form.show()
 
    def open2(self, Ui_venta, Form):
      self.menuprincipal.Form = QtWidgets.QWidget()
      self.menuprincipal.ui = Ui_venta()
      self.menuprincipal.ui.setupUi(self.menuprincipal.Form)
      self.menuprincipal.Form.show()
-     Form.hide() 
+     Form.show() 
    
    def open3(self, Ui_proveedores, Form):
      self.menuprincipal.Form = QtWidgets.QWidget()
      self.menuprincipal.ui = Ui_proveedores()
      self.menuprincipal.ui.setupUi(self.menuprincipal.Form)
      self.menuprincipal.Form.show()
-     Form.hide() 
+     Form.show() 
   
+   def open4(self, Ui_informeVentas, Form):
+     self.menuprincipal.Form = QtWidgets.QWidget()
+     self.menuprincipal.ui = Ui_informeVentas()
+     self.menuprincipal.ui.setupUi(self.menuprincipal.Form)
+     self.menuprincipal.Form.show()
+     Form.show() 

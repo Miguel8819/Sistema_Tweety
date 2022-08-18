@@ -2,50 +2,51 @@ class venta():
     def __init__(self,conn):
         self.conn = conn
         with self.conn.cursor() as cursor:
-            sql = """CREATE TABLE IF NOT EXISTS product
-                        (cod VARCHAR(45) NOT NULL,
-                        name VARCHAR(45) NOT NULL,
-                        cantidad INT (45) NOT NULL,
-                        price INT(45) NOT NULL,
-                        category VARCHAR(45) NOT NULL)"""
+            sql = """CREATE TABLE IF NOT EXISTS venta
+                        (
+                        codigo VARCHAR(40) NOT NULL,
+                        cantidad VARCHAR (40) NOT NULL,
+                        descripcion VARCHAR(40) NOT NULL,
+                        precio_unit VARCHAR(40) NOT NULL,
+                        descuento VARCHAR(40) NOT NULL,
+                        total VARCHAR(40) NOT NULL,
+                        stock VARCHAR(40) NOT NULL)"""
             cursor.execute(sql)
             self.conn.commit()
 
-    def getProducts(self):
+   
+    
+    def getVentas(self):
         with self.conn.cursor() as cursor:
-            sql = """SELECT * FROM product"""
+            sql = """SELECT * FROM venta"""
             cursor.execute(sql)
             result = cursor.fetchall()
             return result
     
-    def getProduct(self, cod):
+    def getVenta(self, codigo):
         with self.conn.cursor() as cursor:
-            sql = """SELECT * FROM product WHERE cod = %s"""
-            cursor.execute(sql,cod)
+            sql = """SELECT * FROM venta WHERE codigo = %s"""
+            cursor.execute(sql,codigo)
             result = cursor.fetchone()
             if result:
                 return result
     
-    def updateProduct(self,cod,name,cantidad,price,category):
+    def updateVenta(self,codigo,cantidad, descripcion, precio_unit,descuento,total,stock):
         with self.conn.cursor() as cursor:
-            sql = """UPDATE product SET name = %s, cantidad= %s, price = %s, category = %s WHERE cod = %s """
-            cursor.execute(sql,(name,cantidad,price,category,cod))
+            sql = """UPDATE venta SET  cantidad = %s, descripcion= %s, precio_unit = %s, descuento = %s, total = %s, stock = %s, WHERE codigo = %s """
+            cursor.execute(sql,( cantidad,descripcion, precio_unit,descuento,total,stock, codigo))
             self.conn.commit()
 
-    def deleteProduct(self,cod):
+    def deleteVenta(self,codigo):
         with self.conn.cursor() as cursor:
-            sql = """DELETE FROM product WHERE cod = %s"""
-            cursor.execute(sql, cod)
+            sql = """DELETE FROM venta WHERE codigo = %s"""
+            cursor.execute(sql, codigo)
             self.conn.commit()
     
-    def insertProduct(self,cod,name,cantidad,price,category):
+    def insertVenta(self,codigo,cantidad, descripcion, precio_unit,descuento,total,stock):
         with self.conn.cursor() as cursor:
-            sql = """INSERT INTO product (cod,name,cantidad,price,category) VALUES (%s,%s,%s,%s,%s)"""
-            cursor.execute(sql, (cod,name,cantidad,price,category))
+            sql = """INSERT INTO venta (codigo,cantidad,descripcion,precio_unit,descuento,total,stock) VALUES (%s,%s,%s,%s,%s,%s,%s)"""
+            cursor.execute(sql, (self,codigo,cantidad, descripcion, precio_unit,descuento,total,stock))
             self.conn.commit()
             
-    def modificarProduct (self,cod,name,cantidad,price,category):
-        with self.conn.cursor() as cursor:
-            sql = """UPDATE product SET name = %s, cantidad= %s, price = %s, category = %s WHERE cod = %s """
-            cursor.execute(sql,(name,cantidad,price,category,cod))
-            self.conn.commit()
+    

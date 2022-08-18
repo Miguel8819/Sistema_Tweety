@@ -8,8 +8,13 @@ sys.path.append(myDir)
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Controllers.ventaController import ventaController
+
 from Models.Product import Product
+
 from Database.Connection import connection
+
+from finalizar_venta_ui import Ui_Form
+
 
 
 class Ui_venta(object):
@@ -17,7 +22,8 @@ class Ui_venta(object):
     def __init__(self):
         self.ventaController = ventaController(self)
         self.product = Product(connection())
-
+      
+      
     def setupUi(self, venta):
         venta.setObjectName("venta")
         venta.resize(1020, 668)
@@ -580,7 +586,9 @@ class Ui_venta(object):
 
         self.c = self.boton_aceptar.clicked.connect(lambda:self.ventaController.aceptar(venta,self.input_codprod.text()))
 
-        self.c = self.boton_efectivo.clicked.connect(lambda:self.ventaController.efectivo(venta,self.input_efectivo.text()))
+        self.p = self.Boton_finalizar.clicked.connect(lambda: self.ventaController.finalizar(venta))
+
+        self.a = self.Boton_cancelar.clicked.connect(lambda:self.ventaController.cancelar(venta))
        
 
     def retranslateUi(self, venta):

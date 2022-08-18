@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'login2.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
 import sys
 import os
 
@@ -18,7 +12,7 @@ from Controllers.LoginController import LoginController
 class Ui_LogIn(object):
     def __init__(self):
         self.login_controller = LoginController(self)
-        print("hola")
+        
     def setupUi(self, LogIn):
         LogIn.setObjectName("LogIn")
         LogIn.resize(800, 600)
