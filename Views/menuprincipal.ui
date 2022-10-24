@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>430</y>
+     <y>410</y>
      <width>171</width>
      <height>51</height>
     </rect>
@@ -26,11 +26,11 @@
     <string>LISTA DE PROVEEDORES</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btn_facturacion">
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>340</y>
+     <y>290</y>
      <width>171</width>
      <height>51</height>
     </rect>
@@ -39,17 +39,17 @@
     <string>FACTURACION</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_stock">
+  <widget class="QPushButton" name="btn_infVentas">
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>250</y>
+     <y>350</y>
      <width>171</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>CONTROL DE STOCK</string>
+    <string>INFORME DE VENTAS</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -89,11 +89,39 @@
     <string>Menu Principal</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_clientes">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>470</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CLIENTES</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_stock">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>230</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CONTROL DE STOCK</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>pushButton_3</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>btn_stock</zorder>
+  <zorder>btn_facturacion</zorder>
+  <zorder>btn_infVentas</zorder>
   <zorder>label_2</zorder>
+  <zorder>btn_clientes</zorder>
+  <zorder>btn_stock</zorder>
  </widget>
  <resources/>
  <connections/>

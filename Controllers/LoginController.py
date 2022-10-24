@@ -2,7 +2,7 @@ import sys
 import os
 myDir = os.getcwd()
 sys.path.append(myDir)
-
+from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtWidgets
 from Database.Connection import connection
 from Models.User import User
@@ -24,6 +24,19 @@ class LoginController():
                 print('Estas logeado')
                 LogIn.close()
             else:
+               
+                msg = QMessageBox()
+                msg.setWindowTitle("Error")
+                msg.setText("Usuario o contraseña incorrecta.")
+
+                msg.setIcon(QMessageBox.Information)
+
+                msg.setStandardButtons(QMessageBox.Ok)
+                msg.setDefaultButton(QMessageBox.Ok)
+                msg.setInformativeText("Vuelva a intentarlo")
+
+                x = msg.exec_()
+
                 print('No estas logeado')
 
     def salir():
