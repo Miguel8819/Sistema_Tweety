@@ -6,8 +6,9 @@ sys.path.append(myDir)
 from PyQt5 import QtWidgets, QtGui
 from Database.Connection import connection
 from Models.Proveedores import *
-from PyQt5.QtWidgets import QMessageBox, QLineEdit
-from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QMessageBox, QLineEdit, QCompleter
+from PyQt5.QtCore import QDate, QStringListModel, Qt
+from PyQt5.QtSql import QSqlDatabase, QSqlQuery, QSqlQueryModel
 
 class CreateProveedorController():
     def __init__(self, create_proveedor):
@@ -38,7 +39,7 @@ class CreateProveedorController():
         input = self.create_proveedor.input_email.clear()
         input = self.create_proveedor.input_web.clear()
 
-    def showProveedor(self,nombreProveedor, nameProv, nameFact, fechaAlta_2, calle, numCalle, codPostal, tel, email, web, Ui_proveedores):
+    def showProveedor(self,nombreProveedor, nameProv, nameFact, fechaAlta_2, calle, numCalle, ciudad, codPostal, tel, email, web, Ui_proveedores):
         if nombreProveedor:
             result = self.proveedor.getProveedor(nombreProveedor)
             self.create_proveedor.show_nameProv.setText(str(result[1]))
@@ -46,17 +47,16 @@ class CreateProveedorController():
             self.create_proveedor.show_fechaAlta_2.setDate(QDate.fromString(result[3]))
             self.create_proveedor.show_calle.setText(str(result[4]))
             self.create_proveedor.show_numCalle.setText(str(result[5]))
-            #self.create_proveedor.show_ciudad.setText(str(result[6]))
+            #self.create_proveedor.show_ciudad.view(str(result[6]))
             self.create_proveedor.show_codPostal.setText(str(result[7]))
             self.create_proveedor.show_tel.setText(str(result[8]))
             self.create_proveedor.show_email.setText(str(result[9]))
             self.create_proveedor.show_web.setText(str(result[10]))
 
-    def autoCompleteProv(self):
-        edit = QtGui.QLineEdit
-        val = self.proveedor.autoComplete()[1]
-        completer = QtGui.QCompleter(val, edit)
-        edit.setCompleter(completer)
-        edit.show()
-
+    def autoCompleteProveedor(self):
+        result = QStringListModel(self.proveedor.autoComplete())
+        completer = QCompleter(result, self)
+        completer.setCaseSensitivity(Qt.CaseInsensitive)
+        return completer
+        
     

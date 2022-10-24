@@ -17,10 +17,10 @@ class Proveedor():
             cursor.execute(sql)
             self.conn.commit()
 
-    def insertProveedor(self,nombreProveedor,nombreFactura,fechaAlta,calle,numeroCalle,ciudad,codPostal,celular,email,pagWeb):
+    def insertProveedor(self,nombreProveedor,nombreFactura,fechaAlta,calle,numeroCalle,codPostal,celular,email,pagWeb):
         with self.conn.cursor() as cursor:
             sql = """INSERT INTO proveedor (nombreProveedor,nombreFactura,fechaAlta,calle,numeroCalle,ciudad,codPostal,celular,email,pagWeb) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-            cursor.execute(sql, (nombreProveedor,nombreFactura,fechaAlta,calle,numeroCalle,ciudad,codPostal,celular,email,pagWeb))
+            cursor.execute(sql, (nombreProveedor,nombreFactura,fechaAlta,calle,numeroCalle,codPostal,celular,email,pagWeb))
             self.conn.commit()
 
     def getProveedor(self, nombreProveedor):
@@ -33,7 +33,7 @@ class Proveedor():
                 
     def autoComplete(self):
         with self.conn.cursor as cursor:
-            sql ="""SELECT nombreProveedor FROM proveedor"""
+            sql ="""SELECT nombreProveedor FROM proveedor WHERE nombreProveedor LIKE = %s"""
             cursor.execute(sql)
             return cursor.fetchall()
 
